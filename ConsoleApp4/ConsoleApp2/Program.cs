@@ -1,38 +1,53 @@
 ﻿List<string> name_list = [];
 
-
-
-Console.Clear();
-
-Console.WriteLine("### NAMNLISTA ###");
-
-foreach (string name in name_list)
-{
-    Console.WriteLine(name);
-}
-
-
-Console.ReadKey();
-
-
-string answer = "";
 do
 {
-    Console.WriteLine("Hej och välkommen");
-    Console.Write("Ange ett namn: ");
+    Console.Clear();
 
-    string input_name = Console.ReadLine()!;
+    Console.WriteLine("--- MENU OPTIONS ---");
+    Console.WriteLine("1. View List");
+    Console.WriteLine("2. Add To List");
+    Console.WriteLine("0. Exit Application");
+    Console.WriteLine("");
 
-    if (!string.IsNullOrEmpty(input_name))
+    Console.Write("Choose one option: ");
+    string option = Console.ReadLine()!;
+
+    Console.Clear();
+
+    switch (option)
     {
-        name_list.Add(input_name);
+        case "1":
+            Console.WriteLine("View List");
+            foreach (string name in name_list)
+            {
+                Console.WriteLine(name);
+            }
+            Console.ReadKey();
+            break;
+
+        case "2":
+            Console.WriteLine("Add to List");
+            Console.Write("Enter name: ");
+            string input_name = Console.ReadLine()!;
+
+            if ( !string.IsNullOrWhiteSpace(input_name))
+            {
+                name_list.Add(input_name);
+            }
+            break;
+
+        case "0":
+            Environment.Exit(0);
+           
+            break;
+
+        default:
+            break;
     }
-    Console.Write("Vill du ange ett nytt namna? (y/n): ");
-    answer = Console.ReadLine() !;
-
+    
+    
 }
-while (answer == "y");
+    while (true) ;
 
-{
 
-}
