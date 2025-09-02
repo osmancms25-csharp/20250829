@@ -1,8 +1,4 @@
-﻿using Microsoft.VisualBasic.FileIO;
-
-using System;
-using System.Collections.Generic;
-
+﻿
 namespace ConsoleApp2
 {
     internal static class MenuService
